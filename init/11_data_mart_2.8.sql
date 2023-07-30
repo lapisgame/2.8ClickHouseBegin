@@ -1,4 +1,4 @@
---dns
+/*--dns
 SELECT DISTINCT (shop_name,
        product_name,
        SUM(sales_cnt) AS sales_fact,
@@ -47,9 +47,9 @@ FROM (
                      plan_cnt,
                      price,
                      shop_mvideo.product_id
-              FROM shop_mvideo sd
-                     INNER JOIN products pr ON pr.product_id = sd.product_id
-                     INNER JOIN plan pl ON pl.product_id = sd.product_id
+              FROM shop_mvideo sm
+                     INNER JOIN products pr ON pr.product_id = sm.product_id
+                     INNER JOIN plan pl ON pl.product_id = sm.product_id
                      INNER JOIN shop s ON s.shop_id = pl.shop_id
               WHERE pl.shop_id = 2
               GROUP BY shop_name, product_name, date, plan_date, sales_cnt, plan_cnt, price, shop_mvideo.product_id
@@ -77,13 +77,13 @@ FROM (
                      plan_cnt,
                      price,
                      shop_sitilink.product_id
-              FROM shop_dns sd
-                     INNER JOIN products pr ON pr.product_id = sd.product_id
-                     INNER JOIN plan pl ON pl.product_id = sd.product_id
+              FROM shop_sitilink ss
+                     INNER JOIN products pr ON pr.product_id = ss.product_id
+                     INNER JOIN plan pl ON pl.product_id = ss.product_id
                      INNER JOIN shop s ON s.shop_id = pl.shop_id
               WHERE pl.shop_id = 3
               GROUP BY shop_name, product_name, date, plan_date, sales_cnt, plan_cnt, price, shop_sitilink.product_id
               ORDER BY shop_sitilink.product_id
        ) AS DNS
 WHERE month = last_month AND last_month = month_plan
-GROUP BY shop_name, product_name, plan_cnt, sales_cnt, price
+GROUP BY shop_name, product_name, plan_cnt, sales_cnt, price*/
