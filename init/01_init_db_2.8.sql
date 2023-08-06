@@ -1,4 +1,4 @@
-
+/*
 CREATE TABLE IF NOT EXISTS products (
     "product_id" UInt16,
     "product_name" String,
@@ -51,3 +51,4 @@ CREATE TABLE IF NOT EXISTS shop_sitilink (
 )
 ENGINE = MergeTree()
 PRIMARY KEY (sale_id);
+*/
